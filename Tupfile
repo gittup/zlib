@@ -1,0 +1,21 @@
+ifeq (@(ZLIB),y)
+include_rules
+
+CFLAGS += -DUSE_MMAP
+srcs += adler32.c
+srcs += compress.c
+srcs += crc32.c
+srcs += gzio.c
+srcs += uncompr.c
+srcs += deflate.c
+srcs += trees.c
+srcs += zutil.c
+srcs += inflate.c
+srcs += infback.c
+srcs += inftrees.c
+srcs += inffast.c
+
+: foreach $(srcs) |> !cc |> %B.o
+: *.o |> !ar |> libz.a
+
+endif

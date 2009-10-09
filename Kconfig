@@ -1,0 +1,8 @@
+config ZLIB
+	bool "zlib"
+	default n
+	help
+	  A Massively Spiffy Yet Delicately Unobtrusive Compression Library.
+
+	  You probably don't need to set this - other programs that require
+	  zlib will automatically select it as necessary.
